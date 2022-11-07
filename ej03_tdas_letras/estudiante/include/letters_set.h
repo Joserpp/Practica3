@@ -18,4 +18,13 @@
  * que tenemos de la letra y la puntuación que dicha letra otorga cuando se
  * utiliza en una palabra
  */
+
+struct LetterInfo{
+    int repetitions;
+    int score;
+};
+
+class LetterSet{
+    
+};
 #endif
