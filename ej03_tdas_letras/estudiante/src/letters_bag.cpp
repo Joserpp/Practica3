@@ -4,7 +4,7 @@
 //solo tiene bag <char> letters
 LettersBag(const LetterSet & letterSet){
 
-    //usar iterator
+    //usar iterator ya que tengo que recorrer todo el tda 
     for(int i=0;i<letterSet.size();i++)
        for(int j=0;j<letterSet[i].repetitions;j++)
 
@@ -38,5 +38,17 @@ vector<char> extractLetters(int num){
 }
 
 
+void LettersBag::clear(){
+
+    letters.clear();
+}
+
+unsigned int LettersBag::size(){
+    letters.size();
+}
+
+LettersBag& LettersBag operator= (const LettersBag & other){
+    //duda de si tengo q tocar memoria dinamica o no
+}
 
 
