@@ -47,8 +47,9 @@ unsigned int LettersBag::size(){
     letters.size();
 }
 
-LettersBag& LettersBag operator= (const LettersBag & other){
-    //duda de si tengo q tocar memoria dinamica o no
+LettersBag & LettersBag operator= (const LettersBag & other){
+    
+    letters=other.letters;
 }
 
 
