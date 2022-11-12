@@ -5,10 +5,7 @@
 
 using namespace std;
 
-LetterSet::LetterSet(){
-
-    letters[]
-}
+LetterSet::LetterSet(){}
 
 LetterSet::LetterSet(const LetterSet & other){
 
@@ -60,20 +57,73 @@ int LetterSet::getScore(string word){
     //Recorremos cada letra
     for(int i=0;i<longitud;i++){
         
-        
+        for(map<char, LetterInfo>::const_iterator pos=letters.cbegin();pos!=letters.cend();++pos)
 
-        if(letters.contains(c))
-            puntuacion+=letters[c].score;
-        
+            if(pos->first != toupper(word[i]))
+                puntuacion+=pos->second.score;      
     }
-return puntuacion;
+
+    return puntuacion;
 }
 
 
-LettersBag & LettersBag operator= (const LettersBag & other){
+LetterSet & LetterSet::operator=(const LetterSet & cl){
+
+    if (this != &cl)
+        letters = cl.letters;
+
+    return *this;
+}
+
+LetterInfo & LetterSet::operator[](const char & val){
+    for (map<char, LetterInfo>::iterator pos = letters.begin(); pos != letters.end() && val >= 0 && val < letters.size(); ++pos)
+        if (pos->first == val) {
+            return pos->second;
+        }
+}
+
+ostream & operator<<(ostream & os, const LetterSet & cl){
+
+    os << "Letra Cantidad Puntos" << endl;
+
+    for (map<char, LetterInfo>::const_iterator pos = cl.letters.cbegin(); pos != cl.letters.cend(); ++pos)
+        os << pos->first << " " << pos->second.repetitions << " " << pos->second.score << endl;
+
+    return os;
+}
+
+istream & operator>>(istream & is, LetterSet & cl){
     
-    letters=other.letters;
+    string cad;
+
+    is >> cad;
+    
+    is >> cad;
+    
+    is >> cad;
+    
+    char cadena;
+    
+    while (is >> cadena){
+        LetterInfo info;
+        
+        is >> info.repetitions;
+        
+        is >> info.score;
+        
+        pair<char, LetterInfo> valor;
+        
+        valor.first = cadena;
+        
+        valor.second = info;
+        
+        cl.insert(valor);
+    }
+
+    return is;
 }
 
-
-  map <char,LetterInfo> letters;
+map <char,LetterInfo> LetterSet::getLetter()const{
+    
+    return letters;
+}
