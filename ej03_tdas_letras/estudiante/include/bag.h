@@ -16,6 +16,9 @@ class Bag {
     private:
         vector<T> v;
     public:
+        
+        Bag<T>::Bag(){}
+        
         Bag<T>::Bag(const Bag<T> & other){
             v = other;
         }

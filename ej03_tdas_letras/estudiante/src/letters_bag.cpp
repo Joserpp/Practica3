@@ -1,16 +1,19 @@
 #include "letters_bag.h"
 
 
+LettersBag::LettersBag(){}
+
 //solo tiene bag <char> letters
-LettersBag(const LetterSet & letterSet){
+LettersBag::LettersBag(const LetterSet & letterSet){
 
-    //usar iterator ya que tengo que recorrer todo el tda 
-    for(int i=0;i<letterSet.size();i++)
-       for(int j=0;j<letterSet[i].repetitions;j++)
+   map<char, LetterInfo> mapa = letterSet.getLetter();
 
-    
+    for (map<char, LetterInfo>::const_iterator pos = mapa.cbegin(); pos != mapa.cend(); ++pos) {
+        for (int j = 0; j < pos->second.repetitions; j++)
+            letters.add(pos->first);
+    }
 }
-
+    
 void LettersBag::insertLetter(const char & l){
 
     letters.add(l);
@@ -19,15 +22,10 @@ void LettersBag::insertLetter(const char & l){
 
 char LettersBag::extractLetter(){
 
-    //Obtengo un numero aleatorio desde 0 hasta size
-    T extraido;
-
-    extraido=letters.get();
-
-    return extraido;
+  return letters.get();
 }
 
-vector<char> extractLetters(int num){
+vector<char> LettersBag::extractLetters(int num){
 
     vector<char> extraidos;
     
@@ -44,12 +42,15 @@ void LettersBag::clear(){
 }
 
 unsigned int LettersBag::size(){
-    letters.size();
+   return letters.size();
 }
 
-LettersBag & LettersBag operator= (const LettersBag & other){
+LettersBag & LettersBag::operator= (const LettersBag & other){
     
-    letters=other.letters;
+    if (this != &other)
+        letters = other.letters;
+    
+    return *this;
 }
 
 

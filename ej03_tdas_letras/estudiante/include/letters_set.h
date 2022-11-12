@@ -43,5 +43,15 @@ class LetterSet{
     bool empty();
 
     int getScore(string word);
+
+    LetterSet & operator=(const LetterSet & cl);
+
+    LetterInfo & operator[](const char & val);
+
+    friend ostream & operator<<(ostream & os, const LetterSet & cl);
+
+    friend istream & operator>>(istream & is, LetterSet & cl);
+
+    map <char,LetterInfo> getLetter()const;
 };
 #endif

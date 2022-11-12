@@ -8,30 +8,34 @@
  * La estructura de datos subyacente es una lista de chars.
  */
 
-#include <iostream>
-#include "letters_set.h"
 #include "bag.h"
+#include "letters_set.h"
+#include <stdlib.h>
+#include <time.h>
+#include <vector>
 
 class LettersBag {
     private:
         Bag <char> letters;
     
     public:
+        
+        LettersBag();
 
-        LettersBag(const LettersSet & letterSet);
+        LettersBag(const LetterSet & letterSet);
         
         void insertLetter(const char & l);
 
         char extractLetter();
 
-        char extractLetter(int num);
+        vector<char> extractLetters(int num);
 
         void clear();
 
-        int size();
+        unsigned int size();
 
         LettersBag & operator=(const LettersBag & other);
-}
+};
 
 
 #endif
