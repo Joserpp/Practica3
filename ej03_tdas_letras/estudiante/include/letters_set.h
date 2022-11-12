@@ -54,4 +54,5 @@ class LetterSet{
 
     map <char,LetterInfo> getLetter()const;
 };
+
 #endif
