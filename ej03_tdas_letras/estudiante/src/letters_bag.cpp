@@ -3,7 +3,6 @@
 
 LettersBag::LettersBag(){}
 
-//solo tiene bag <char> letters
 LettersBag::LettersBag(const LetterSet & letterSet){
 
    map<char, LetterInfo> mapa = letterSet.getLetter();

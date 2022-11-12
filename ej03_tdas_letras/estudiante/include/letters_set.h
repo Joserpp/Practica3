@@ -30,8 +30,12 @@ struct LetterInfo{
 };
 
 class LetterSet{
-    map <char,LetterInfo> letters;
-
+    
+    private:
+        map <char,LetterInfo> letters;
+    
+    public:
+    
     bool insert(const pair<char,LetterInfo> & val);
 
     bool erase(const char & key);

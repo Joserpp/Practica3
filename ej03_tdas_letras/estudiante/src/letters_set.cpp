@@ -12,8 +12,7 @@ LetterSet::LetterSet(const LetterSet & other){
     letters=other.letters;
 }
 
-//Solo puede estar registrado una unica clave por ello debemos de comprobar
-//que la clave no se repita
+
 bool LetterSet::insert(const pair<char,LetterInfo> & val){
     bool condicion=true;
     for(map<char, LetterInfo>::iterator pos = letters.begin(); pos != letters.end() && condicion; pos++)
