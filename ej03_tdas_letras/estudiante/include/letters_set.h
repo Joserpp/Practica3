@@ -1,6 +1,11 @@
 #ifndef __LETTER_SET_H__
 #define __LETTER_SET_H__
 
+#include <iostream>
+#include <map>
+
+using namespace std;
+
 /**
  * @brief TDA LetterInfo
  *
@@ -25,6 +30,18 @@ struct LetterInfo{
 };
 
 class LetterSet{
+    map <char,LetterInfo> letters;
+
+    bool insert(const pair<char,LetterInfo> & val);
+
+    bool erase(const char & key);
     
+    void clear();
+    
+    unsigned int size();
+
+    bool empty();
+
+    int getScore(string word);
 };
 #endif

@@ -10,7 +10,7 @@
 
 #include <stdlib.h>
 #include <time.h>
-
+#include <cstdlib>
 template <class T>
 class Bag {
     private:
@@ -26,16 +26,36 @@ class Bag {
 
         T Bag<T>::get(){
 
-            
+            if(!v.empty()){
+
+                int a = rand() % v.size();
+
+                T devolver=v[a];
+                
+                v.erase(a);
+                
+                return devolver;
+            }
+
+            //Pensar que hacer si esta vacia
         }
 
-        void Bag<T>::clear();
+        void Bag<T>::clear(){
+            v.clear();
+        }
 
-        unsigned int Bag<T>::size();
+        unsigned int Bag<T>::size(){
+            return v.size();
+        }
 
-        bool Bag<T>::empty();
+        bool Bag<T>::empty(){
+            return v.empty();
+        }
 
-        const Bag<T> & Bag<T>::operator =(const Bag<T> & other);
+        const Bag<T> & Bag<T>::operator =(const Bag<T> & other){
+
+            //Memoria dinamica?
+        }
 };
 
 #endif
