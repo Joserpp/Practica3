@@ -127,23 +127,56 @@ class Dictionary{
                 
                 ~const_iterator(){}
                 
-                const_iterator & operator = (const set<string>::const_iterator& otro){it=otro;return *this;}
+                const_iterator & operator = (const set<string>::const_iterator& otro){
+                    
+                    it=otro;
+                    return *this;
+                }
                 
-                const_iterator & operator = (const const_iterator& otro){it=otro.it;return *this;}
+                const_iterator & operator = (const const_iterator& otro){
+                    
+                    it=otro.it;
+                    return *this;
+                }
                 
-                string operator*()const{return *it;}
+                string operator*()const{
+                    
+                    return *it;
+                }
                 
-                const_iterator& operator++(){++it;return *this;}
+                const_iterator& operator++(){
+                    
+                    ++it;
+                    return *this;
+                }
                 
-                const_iterator& operator--(){--it;return *this;}
+                const_iterator& operator--(){
+                    
+                    --it;
+                    return *this;
+                }
                 
-                const_iterator& operator++(int){it++;return *this;}
+                const_iterator& operator++(int){
+                    
+                    it++;
+                    return *this;
+                }
                 
-                const_iterator& operator--(int){it--;return *this;}
+                const_iterator& operator--(int){
+                    
+                    it--;
+                    return *this;
+                }
                 
-                bool operator!=(const const_iterator& otro){return it != otro.it;}
+                bool operator!=(const const_iterator& otro){
+                    
+                    return it != otro.it;
+                }
                 
-                bool operator==(const const_iterator& otro){return it == otro.it;}
+                bool operator==(const const_iterator& otro){
+                    
+                    return it == otro.it;
+                }
         };
 
         const_iterator cbegin()const{

@@ -57,6 +57,153 @@ class LetterSet{
     friend istream & operator>>(istream & is, LetterSet & cl);
 
     map <char,LetterInfo> getLetter()const;
+
+    class iterator{
+            private:
+                map<char,LetterInfo>::iterator it;
+
+            public:
+                iterator(){}
+                iterator(const map<char,LetterInfo>::iterator & otro): it(otro){}
+                iterator(const iterator & otro): it(otro.it){}
+                ~iterator(){}
+                iterator & operator = (const map<char,LetterInfo>::iterator & otro){
+
+                    it = otro;
+                    return *this;
+                }
+
+                iterator & operator = (const iterator & otro){
+
+                    it = otro.it;
+                    return *this;
+                }
+
+                pair<char,LetterInfo> operator *()const{
+                    return *it;
+                }
+                
+                iterator & operator ++ (){
+
+                    ++it;
+                    return *this;
+                }
+
+                iterator & operator -- (){
+
+                    --it;
+                    return *this;
+                }
+
+                iterator & operator ++ (int){
+
+                    it++;
+                    return *this;
+                }
+
+                iterator & operator -- (int){
+
+                    it--;
+                    return *this;
+                }
+
+                bool operator != (const iterator & otro){
+                    
+                    return (it != otro.it);
+                }
+
+                bool operator == (const iterator & otro){
+                    
+                    return (it == otro.it);
+                }
+        };
+
+        iterator begin(){
+                    
+            iterator i = letters.begin();
+            return i;
+        }
+
+        iterator end(){
+            
+            iterator i = letters.end();
+            return i;
+        }
+
+        class const_iterator{
+            private:
+                map<char,LetterInfo>::const_iterator it;
+
+            public:
+                const_iterator(){}
+                
+                const_iterator(const map<char,LetterInfo>::const_iterator & otro): it(otro){}
+                
+                const_iterator(const const_iterator & otro): it(otro.it){}
+                
+                ~const_iterator(){}
+                
+                const_iterator & operator = (const map<char,LetterInfo>::const_iterator& otro){
+                    
+                    it=otro;return *this;
+                }
+                
+                const_iterator & operator = (const const_iterator& otro){
+                    
+                    it=otro.it;return *this;
+                }
+                
+                pair<char,LetterInfo> operator *()const{
+                    
+                    return *it;
+                }
+                
+                const_iterator& operator++(){
+                    
+                    ++it;
+                    return *this;
+                }
+                
+                const_iterator& operator--(){
+                    
+                    --it;
+                    return *this;
+                }
+                
+                const_iterator& operator++(int){
+                    
+                    it++;return *this;
+                }
+                
+                const_iterator& operator--(int){
+                    
+                    it--;
+                    return *this;
+                }
+                
+                bool operator!=(const const_iterator& otro){
+                    
+                    return it != otro.it;
+                }
+                
+                bool operator==(const const_iterator& otro){
+                    
+                    return it == otro.it;
+                }
+        };
+
+        const_iterator cbegin()const{
+                    
+            const_iterator i = letters.cbegin();
+            return i;
+        }
+
+        const_iterator cend()const{
+            
+            const_iterator i = letters.cend();
+            return i;
+        }
+
 };
 
 #endif
