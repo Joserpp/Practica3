@@ -7,11 +7,14 @@
  *  Este TDA abstracto nos permite trabajar con una colección de elementos que
  *  permite la extracción de elementos de forma aleatoria sin reemplazamiento
  */
+#include <iostream>
 
 #include <stdlib.h>
 #include <time.h>
 #include <cstdlib>
 #include <vector>
+
+using namespace std;
 template <class T>
 class Bag {
     private:
