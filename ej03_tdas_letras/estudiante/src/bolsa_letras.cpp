@@ -1,7 +1,5 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <string>
+#include <fstream>
 #include "letters_bag.h"
 #include "letters_set.h"
 
@@ -11,7 +9,14 @@ int main(int argc, char *argv[])
 {
     LetterSet conjunto;
 
+    ifstream fi;
 
+    fi.open(argv[1]);
 
-    return 0;
+    fi >> conjunto;
+
+    LettersBag bolsa(conjunto);
+
+    for(int i = bolsa.size(); i > 0; i--)
+        cout << bolsa.extractLetter() << endl;
 }

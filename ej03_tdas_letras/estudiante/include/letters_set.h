@@ -36,6 +36,10 @@ class LetterSet{
     
     public:
     
+    LetterSet();
+
+    LetterSet(const LetterSet & other);
+
     bool insert(const pair<char,LetterInfo> & val);
 
     bool erase(const char & key);

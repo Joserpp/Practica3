@@ -58,7 +58,7 @@ int LetterSet::getScore(string word){
         
         for(map<char, LetterInfo>::const_iterator pos=letters.cbegin();pos!=letters.cend();++pos)
 
-            if(pos->first != toupper(word[i]))
+            if(pos->first == toupper(word[i]))
                 puntuacion+=pos->second.score;      
     }
 

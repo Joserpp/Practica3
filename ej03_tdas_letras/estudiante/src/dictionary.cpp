@@ -52,11 +52,11 @@ void Dictionary::empty() const{
 
 unsigned int Dictionary::size() const{
 
-    int tamaño;
+    int tamanio;
 
-    tamaño = words.size();
+    tamanio = words.size();
 
-    return tamaño;
+    return tamanio;
 }
 
 int Dictionary::getOcurrences (const char c){
@@ -109,6 +109,27 @@ vector<string> Dictionary::wordsOfLength(int length){
     return total;
 }
 
-ostream & operator << (ostream & os, const Dictionary & dic){}
+ostream & operator << (ostream & os, const Dictionary & dic){
+    
+        for(Dictionary::const_iterator pos = dic.cbegin(); pos != dic.cend(); 
+        pos.operator++()){
 
-istream & operator >> (istream & is, const Dictionary & dic){}
+            os << *pos <<endl;
+
+
+        }
+
+        return os;
+}
+
+istream & operator >> (istream & is, Dictionary & dic){
+
+    string pal;
+
+    while(is >> pal){
+
+        dic.insert(pal);
+    }
+
+    return is;
+}
