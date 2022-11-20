@@ -7,6 +7,11 @@
 
 using namespace std;
 
+/**
+ * Implementaremos un programa para probar el TDA diccionary
+ * Construye un Dictionary con el fichero de las palabras, extrae de dicho diccionario las palabras de
+ * la longitud que buscamos y las imprime por pantalla.
+*/
 int main(int argc, char *argv[])
 {
 

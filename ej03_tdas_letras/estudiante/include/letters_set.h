@@ -35,32 +35,106 @@ class LetterSet{
         map <char,LetterInfo> letters;
     
     public:
+
+    /**
+     * @brief Constructor por defecto que crea un LetterSet vacío.
+     */
     
     LetterSet();
 
+    /**
+     * @brief Constructor de copia que crea un LetterSet igual que el pasado
+     como argumento.
+     * @param other LetterSet explicito del que se copia el implicito.
+     */
+
     LetterSet(const LetterSet & other);
+
+    /**
+     * @brief Inserta un elemento en el LetterSet.
+     * @param val Pareja de una letra y Letterinfo que se inserta
+     * @return un bool que indica si se ha realizado bien la inserción.
+     */
 
     bool insert(const pair<char,LetterInfo> & val);
 
+    /**
+     * @brief Elimina un acracter del LetterSet.
+     * @param val Caracter que se elimina.
+     * @return bool que indica si se ha borrado la palabra.
+     */
+
     bool erase(const char & key);
+
+    /**
+     * @brief Borra el contenido de LetterSet.
+     */
     
     void clear();
+
+    /**
+     * @brief Tamaño del LetterSet.
+     * @return Tamaño del LetterSet(elementos que hay en él).
+     */
     
     unsigned int size();
 
+    /**
+     * @brief Comprueba si esta vacío el LetterSet.
+     * @return bool que indica si el letterSet está vcío.
+     */
+
     bool empty();
+
+    /**
+     * @brief Calcula la puntuacíon de la plaabra
+     * @param word palabra de la cual queremos calcular la puntuación.
+     * @return Puntuación de la palabra.
+     */
 
     int getScore(string word);
 
+    /**
+     * @brief sobra carga del operador de asignación.
+     * @param cl Letterset que se copia.
+     * @return Referencia alobjeto implicito.
+     */
+
     LetterSet & operator=(const LetterSet & cl);
+
+    /**
+     * @brief Sobrecarga del operador corchete.
+     * @brief Accede a los elementos del del map.
+     * @param val Caracter a consultar.
+     * @return Letterinfo con la información del caracter.
+     */
 
     LetterInfo & operator[](const char & val);
 
+    /**
+     * @brief Sobrecarga del operador de salida.
+     * @param os flujo de salida.
+     * @param cl LetterSet que se manda al flujo de salida.
+     * @return flujo de salida.
+     */
+
     friend ostream & operator<<(ostream & os, const LetterSet & cl);
+
+    /**
+     * @brief Sobrecarga del operador de entrada.
+     * @param is flujo de entrada.
+     * @param cl LetterSet que se almacena en el flujo de entrada.
+     * @return flujo de entrada.
+     */
 
     friend istream & operator>>(istream & is, LetterSet & cl);
 
-    map <char,LetterInfo> getLetter()const;
+    /**
+     * @brief Devuelve el atributo privado mapa.
+     * @return Atributo privado map.
+     */
+
+    map <char,LetterInfo> getLetter() const;
 
     class iterator{
             private:
