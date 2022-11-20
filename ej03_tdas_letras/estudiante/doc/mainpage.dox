@@ -1,4 +1,40 @@
-/*! \mainpage Título de la página principal
+/*! \mainpage Práctica 3 ED
+
+Autores: Alonso Doña Martínez y Jose Ramón Plaza Plaza
+
+Implementación de 4 TDA Bag, Dictionary, letters_bag,letters_set que permitirán
+realizar una serie de actividades a partir de letras.
+
+# Clase Bag
+
+Este TDA abstracto nos permite trabajar con una colección de elementos que
+permite la extracción de elementos de forma aleatoria sin reemplazamiento 
+
+Función de abstracción = fA:mochila--->{mochila.v[0] + mochila.v[1] + ...mochila.v[size]}
+
+Invariante de la representación = Se cumple siempre que [ mochila.v[n], n<mochila.v.size() ]; 
+
+Los métodos implementados en esta clase son los siguientes:
+
+##Bag()
+
+Constructor sin argumentos, para inicializar las instancias del TDA Bag
+
+##Bag(const Bag<T> & other)
+
+Constructor de copia, inicializa una instancia de Bag según la instancia pasada
+por argumento.
+@param other instancia base de la que se va a realizar la copia.
+
+
+##add (const T & element)
+
+Permite añadir un nuevo elemento a nuestra instancia de Bag 
+@param const T & element  elemento a añdir.
+
+##T get();
+
+Permite obtener un elemento contenido en bad de forma aleatoria
 
 # Introducción
 
@@ -6,6 +42,4 @@ A RELLENAR POR EL ESTUDIANTE
 
 # Ejecutables
 
-A RELLENAR POR EL ESTUDIANTE
-
-*/
+A RELLENAR POR EL ESTU
