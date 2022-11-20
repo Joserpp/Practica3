@@ -7,6 +7,14 @@
 
 using namespace std;
 
+/**
+ * Implementaremos un programa para probar el funcionamiento del TDA LettersSet
+ * El programa tendrá los siguientes argumentos: 
+ * 1. Ruta al archivo con información sobre el conjunto de letras
+ * 2. Palabra de la que calcular la puntuación
+ * E imprimirá por pantalla la puntuación de dicha palabra.
+*/
+
 int main(int argc, char *argv[])
 {
 
@@ -15,9 +23,6 @@ int main(int argc, char *argv[])
     ifstream fi;
 
     fi.open(argv[1]);
-
-
-    //Introducimos primer valor en LetterSet
 
     fi>>valor;
 
